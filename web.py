@@ -6,7 +6,12 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<username>')
 def redirector(username="nothing"):
-    return redirect("http://www.google.com/?q=" + username)
+    useragent = request.headers['User-Agent']
+    
+    if useragent == "bitly" or useragent == "bitlybot" or useragent == "bit.ly":
+        return "Hello bitly"
+    else:
+        return redirect("http://www.google.com/?q=" + username)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
