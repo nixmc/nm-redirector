@@ -7,7 +7,7 @@ app = Flask(__name__)
 def default():
     return redirect("https://github.com/nixmc/nm-redirector")
     
-@app.route('/<encoded_url>/')
+@app.route('/<path:encoded_url>/')
 @app.route('/<path:encoded_url>/<username>/')
 def redirector(encoded_url="", username=""):
     useragent = request.headers['User-Agent']
