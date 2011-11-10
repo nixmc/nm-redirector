@@ -1,4 +1,2 @@
 flask
 gunicorn
-#ipython
-#readline

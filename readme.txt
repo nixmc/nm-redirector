@@ -9,3 +9,5 @@ It also takes any random argument on the end to fool URL shorteners into generat
 http://example.com/http%3A%2F%2Fwww.google.com%2F/fooling
 
 If the bitly bot hits the app it should stop it from following the redirect.
+
+See it in action: http://nm-redirector.herokuapp.com/
