@@ -4,12 +4,14 @@ from flask import Flask, request, redirect
 app = Flask(__name__)
     
 @app.route('/')
+def default():
+    return redirect("https://github.com/nixmc/nm-redirector")
+    
 @app.route('/<encoded_url>/')
 @app.route('/<path:encoded_url>/<username>/')
 def redirector(encoded_url="", username=""):
     useragent = request.headers['User-Agent']
-    
-    if useragent == "bitly" or useragent == "bitlybot" or useragent == "bit.ly":
+    if useragent in ("bitly","bitlybot","bit.ly"):
         return "Hello bitly"
     else:
         url = urllib.unquote_plus(encoded_url)
