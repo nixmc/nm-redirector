@@ -11,7 +11,7 @@ def redirector(username="nothing"):
     if useragent == "bitly" or useragent == "bitlybot" or useragent == "bit.ly":
         return "Hello bitly"
     else:
-        return redirect("http://www.google.com/?q=" + username)
+        return redirect("http://www.google.com/)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
